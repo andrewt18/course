@@ -1,0 +1,19 @@
+My Music
+
+artist: Wiz Khalifa
+album: Blacc Hollywood
+genre: rap
+year: 2014	
+codec: mp3
+
+artist: Григорий Лепс
+album: Гангстер №1
+genre: шансон
+year: 2014	
+codec: AAC
+
+artist: Marlon Roudette
+album: Electric Soul
+genre: R'n'B
+year: 2014	
+codec: mp3
