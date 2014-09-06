@@ -11,13 +11,13 @@ class Finder():
 		# self.pattern = re.search(r'http://[\w-]+', self.url).group()
 	cache = []
 
-	# def request(self, link):
-	# 	try:
-	# 		page = urllib.request.urlopen(link)
-	# 		data = str(page.read())
-	# 		return data
-	# 	except:
-	# 		return 'Nothing found'
+	def request(self, link):
+		try:
+			page = urllib.request.urlopen(link)
+			data = str(page.read())
+			return data
+		except:
+			return 'Nothing found'
 
 	def email_checker(self, data):
 		found = re.findall(r'[\w.-]+@[\w-]+\.[\w]+', data)
@@ -46,9 +46,8 @@ class Finder():
 		return good_links
 
 	def link_finder(self, data):
-		links = []
 		found = re.findall(self.url+'[\w/-]+', data)
-		return links
+		return found
 
 	def create_output_file(self):
 		output = open('output.txt', 'w')
@@ -66,7 +65,7 @@ class Finder():
 					data = self.request(i)
 					self.add_mails(data)
 				else:
-					print("Request to",i)
+					print("Request to deep 2",i)
 					data = self.request(i)
 					self.add_mails(data)
 					new_links.extend(self.link_checker(data, new_links, db))
