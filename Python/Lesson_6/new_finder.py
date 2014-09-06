@@ -83,9 +83,11 @@ check = Finder()
 check.main()
 
 class TestFoundedItems(unittest.TestCase):
-
+	#add your link to test. Example:
 	tested_link = 'http://heller.ru/blog/'
+	#add your maillist to test. Example:
 	tested_mails = ['heller@heller.ru', 'heller@riseup.net']
+	#add your count of links on tested site. Example:
 	tested_links_count = 162
 	def test_founded_mails(self):
 		#Проверка найденных емайлов на определённой странице

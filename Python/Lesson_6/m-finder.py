@@ -11,13 +11,13 @@ class Finder():
 		# self.pattern = re.search(r'http://[\w-]+', self.url).group()
 	cache = []
 
-	def request(self, link):
-		try:
-			page = urllib.request.urlopen(link)
-			data = str(page.read())
-			return data
-		except:
-			return 'Nothing found'
+	# def request(self, link):
+	# 	try:
+	# 		page = urllib.request.urlopen(link)
+	# 		data = str(page.read())
+	# 		return data
+	# 	except:
+	# 		return 'Nothing found'
 
 	def email_checker(self, data):
 		found = re.findall(r'[\w.-]+@[\w-]+\.[\w]+', data)
