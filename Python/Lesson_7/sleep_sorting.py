@@ -1,19 +1,22 @@
 from time import sleep
 from threading import Thread
 
-def sleep_sort(arg):
-	sleep(arg)
-	sorted_items.append(arg)
-def sort(lst):
-	threads = []
-	for i in lst:
-		t = Thread(target=sleep_sort, args=(i,))
-		t.start()
-		threads.append(t)
-	for a in threads:
-		t.join()
+class SleepSort:
+	def __init__(self, to_sort):
+		self.list_to_sort = to_sort
+		self.sorted_items = []
 
-sorted_items = []
-lst = [1, 4, 3, 9, 11, 2]
-sort(lst)
-print(sorted_items)
+	def sleep_sort(self, arg):
+		sleep(arg)
+		self.sorted_items.append(arg)
+	def sort(self):
+		threads = []
+		for i in self.list_to_sort:
+			t = Thread(target=self.sleep_sort, args=(i,))
+			t.start()
+			threads.append(t)
+		for a in threads:
+			a.join()
+		return list(self.sorted_items)
+sort = SleepSort([1, 4, 3, 9, 11, 2])
+print(sort.sort())
