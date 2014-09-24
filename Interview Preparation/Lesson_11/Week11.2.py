@@ -2,7 +2,6 @@ def permutations(lst):
 	if len(lst) == 1 or len(lst)==0:
 		return lst
 	res = []
-	how_now = lst[:]
 	change_index = 1
 	var = len(lst) - 1
 	while True:
